@@ -4,8 +4,8 @@
   }
   
   html {
-    background: #333;
-    color: #bbb;
+    background: rgb(158, 201, 141);
+    color: rgb(255, 255, 255);
     font-family: Menlo;
   }
   
@@ -15,7 +15,7 @@
   }
   
   .center {
-    color: #bbb;
+    color: rgb(0, 0, 0);
     font-size: 4vw;
     margin: 0 0.5em;
     text-align: center;

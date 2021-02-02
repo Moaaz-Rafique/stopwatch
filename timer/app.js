@@ -1,6 +1,6 @@
 var min = +prompt("Enter minutes")
-var sec = +prompt("Enter minutes")
-var milisec = 99
+var sec = +prompt("Enter seconds")
+var milisec = 0
 
 
 
@@ -21,18 +21,25 @@ else
 disMin.innerHTML = min
 
 function timer() {
-    milisec--
-    disMilisec.innerHTML = milisec
 
+    milisec--
+
+    disMilisec.innerHTML = milisec
     if (milisec <= 0) {
         sec--
         disSec.innerHTML = sec
         milisec = 99
-    } else if (sec <= 0) {
-        min--
+    }
+    if (sec <= 0) {
+        if(min>0)
+            min--
+        else{
+            pause()
+            return
+        }
+        sec = 59
         disSec.innerHTML = sec
         disMin.innerHTML = min
-        sec = 59
     }
 }
 
@@ -49,12 +56,5 @@ function pause() {
 }
 
 function reset() {
-
-    pause()
-    min = 0
-    sec = 0
-    milisec = 0
-    disMilisec.innerHTML = "00"
-    disSec.innerHTML = '00'
-    disSec.innerHTML = '00'
+    location.reload()
 }
